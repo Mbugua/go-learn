@@ -8,6 +8,6 @@ func main() {
 	fmt.Println(mySlice)
 }
 
-func updateSlice(s string) {
+func updateSlice(s []string) {
 	s[0] = "Bye"
 }
