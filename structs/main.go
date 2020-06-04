@@ -22,22 +22,28 @@ func main() {
 	// // fmt.Println(alex)
 	// fmt.Printf("%+v", alex)
 
-	joe := person{
-		firstName: "Joe",
-		lastName:  "Doe",
-		contactInfo: contactInfo{
-			email: "jdoe@doe.com",
-			phone: "254700123456",
-		},
-	}
-
-	joe.updateName("Gi-Joe")
-	joe.print()
-
+	// joe := person{
+	// 	firstName: "Joe",
+	// 	lastName:  "Doe",
+	// 	contactInfo: contactInfo{
+	// 		email: "jdoe@doe.com",
+	// 		phone: "254700123456",
+	// 	},
+	// }
+	// // &variable - give access to memory address of variable pointing at
+	// joePointer := &joe
+	// joePointer.updateName("Gi-Joe")
+	// joe.print()
+	name := "Bill"
+	updateValue(name)
+	fmt.Println(name)
+}
+func updateValue(n string) {
+	n = "Bond"
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 // create person  receiver
