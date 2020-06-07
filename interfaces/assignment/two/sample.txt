@@ -1,0 +1,1 @@
+Hi there this is a smaple file to be read in Go lang and print this line in terminal.
