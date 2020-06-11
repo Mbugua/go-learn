@@ -1,1 +1,3 @@
-Hi there this is a smaple file to be read in Go lang and print this line in terminal.
+Hi there this is a smaple file to be read
+in Go lang and print this line in terminal.
+a story for another day.
