@@ -8,21 +8,9 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 )
-
-func readFromTextFile(filename string) string {
-	bs, err := ioutil.ReadFile(filename)
-	if err != nil {
-		fmt.Println("Error:", err)
-		os.Exit(1)
-	}
-	//convert the bytes to string
-	txt := string(bs)
-	return txt
-
-}
 
 func main() {
 	if len(os.Args) != 2 {
@@ -30,7 +18,11 @@ func main() {
 	}
 	filename := os.Args[1]
 	fmt.Println("file to read:", filename)
+	file, err := os.Open(filename)
 
-	tx := readFromTextFile(filename)
-	fmt.Println(tx)
+	if err != nil {
+		fmt.Println(err)
+	}
+	io.Copy(os.Stdout, file)
+
 }
